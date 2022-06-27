@@ -1,5 +1,5 @@
 {
-  "name": "unicorn-says-hello-world",
+  "name": "dkosov-npm-repo-test",
   "version": "1.0.0",
   "description": "A unicorn that says hello world",
   "main": "dist/index.js",
