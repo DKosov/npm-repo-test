@@ -1,1 +1,3 @@
-export * from "./unicorn";
+import Via from './Via';
+
+export default Via;

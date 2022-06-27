@@ -1,21 +1,25 @@
 {
   "name": "dkosov-npm-repo-test",
-  "version": "1.0.0",
-  "description": "A unicorn that says hello world",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "version": "1.0.1",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "clean": "tsc --build --clean",
+    "watch": "tsc -w -p ./tsconfig.json",
+    "build": "yarn clean && tsc --project ./tsconfig.json",
+    "prepare": "yarn clean && yarn build",
+    "lint": "eslint --ext .tsx --ext .ts ./src",
+    "lint:fix": "eslint --ext .tsx --ext .ts ./src --fix",
+    "prettier:fix": "prettier --write ./src/."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dkosov/npm-repo-test.git"
-  },
-  "keywords": [],
-  "author": "dkosov",
-  "license": "ISC"
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "^2.6.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.6.2"
+  }
 }
